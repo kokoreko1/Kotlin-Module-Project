@@ -61,17 +61,13 @@ class Archive(val name: String) {
                 (null) -> continue
                 (0) -> break
                 else -> {
-
-                    var selectedNote: String?
-
                     try {
-                        selectedNote = this.listOfNotes.get(choiceInt-1)
+                        val selectedNote = this.listOfNotes.get(choiceInt-1)
+                        println("Просмотр заметки:  $selectedNote")
                     } catch (e: Exception){
                         println("Введите номер заметки для выбора или 0 для выхода.")
                         continue
                     }
-
-                    println("Просмотр заметки:  $selectedNote")
                 }
             }
         }
