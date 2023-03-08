@@ -34,14 +34,14 @@ class Archive(val name: String) {
         println("новая заметка добавлена - $content")
     }
 
-    fun selectNote(){
+    fun selectNote() {
 
-        if (listOfNotes.isEmpty()){
+        if (listOfNotes.isEmpty()) {
             println("В архиве ${this.name} нет заметок для выбора, добавьте новую.")
             return
         }
 
-        while (true){
+        while (true) {
 
             println("----------------------------------")
             println("* Выберите заметку для просмотра *")
@@ -57,14 +57,14 @@ class Archive(val name: String) {
             println("0 - Выход")
 
             val choiceInt = choiceInt()
-            when (choiceInt){
+            when (choiceInt) {
                 (null) -> continue
                 (0) -> break
                 else -> {
                     try {
-                        val selectedNote = this.listOfNotes.get(choiceInt-1)
+                        val selectedNote = this.listOfNotes.get(choiceInt - 1)
                         println("Просмотр заметки:  $selectedNote")
-                    } catch (e: Exception){
+                    } catch (e: Exception) {
                         println("Введите номер заметки для выбора или 0 для выхода.")
                         continue
                     }
@@ -74,13 +74,13 @@ class Archive(val name: String) {
     }
 }
 
-fun choiceInt():Int?{
+fun choiceInt(): Int? {
     val scan = Scanner(System.`in`)
-    val choice:String = scan.next()
+    val choice: String = scan.next()
 
     try {
         return choice.toInt()
-    } catch (e: Exception){
+    } catch (e: Exception) {
         println("Введите цифру для выбора пункта меню.")
         return null
     }

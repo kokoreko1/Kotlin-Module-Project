@@ -5,7 +5,7 @@ class Repository {
     val scan = Scanner(System.`in`)
     var listOfArchives: MutableList<Archive> = mutableListOf<Archive>()
 
-    fun processingArchives(){
+    fun processingArchives() {
 
         while (true) {
 
@@ -27,7 +27,7 @@ class Repository {
         }
     }
 
-    fun createArchive() : Archive {
+    fun createArchive(): Archive {
         println("Введите имя нового архива: ")
         val name = scan.nextLine()
         val newArchive = Archive(name)
@@ -36,7 +36,7 @@ class Repository {
         return newArchive
     }
 
-    fun selectArchive() : Archive? {
+    fun selectArchive(): Archive? {
 
         var selectedArchive: Archive? = null
 
@@ -67,9 +67,9 @@ class Repository {
                 (0) -> break
                 else -> {
                     try {
-                        selectedArchive = listOfArchives.get(choiceInt-1)
+                        selectedArchive = listOfArchives.get(choiceInt - 1)
                         break
-                    } catch (e: Exception){
+                    } catch (e: Exception) {
                         println("Введите цифру архива для выбора или 0 для выхода.")
                         continue
                     }
